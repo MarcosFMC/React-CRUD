@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -11,3 +11,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.crud-app{
+  display: grid;
+  grid-template-columns: 500px 500px;
+  grid-template-rows: 400px;
+  grid-gap: 20px;
+}
+
+table{
+ height: 200px;
+ width: 100% ;
+}
+
+form{
+  display: flex;
+  flex-direction: column; 
+}
+input[type='text'],input[type='number']{
+  margin-top: 15px;
+  height: 30px;
+}
+input[type='submit'],button{
+  width: 70px;
+  height: 25px;
+}
+
+input[type='submit']{
+  margin-top: 10px;
+}
+
+button{
+  margin:0px 10px;
+}
+
+
+

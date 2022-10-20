@@ -67,16 +67,9 @@ function CrudApp() {
   }
 
   return (
-    <div>
-       <article>
-        {isEditing !== null ? <h2>Edit Student</h2> : <h2>Add Student</h2>}
-        <CrudForm createData={createData} updateStudent={updateStudent} isEditing={isEditing} setIsEditing={setIsEditing}></CrudForm>
-       </article>
-
-       <article>
-        <h2>Students</h2>
-        <CrudTable dataBase={dataBase} deleteData={deleteData} setIsEditing={setIsEditing}></CrudTable>
-       </article>
+    <div className='crud-app'>
+        <CrudForm createData={createData} updateStudent={updateStudent} isEditing={isEditing} setIsEditing={setIsEditing}></CrudForm>        
+        <CrudTable dataBase={dataBase} deleteData={deleteData} setIsEditing={setIsEditing}></CrudTable>  
     </div>
   )
 }

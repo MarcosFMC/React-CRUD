@@ -4,6 +4,7 @@ import CrudRow from './CrudRow'
 function CrudTable({dataBase,deleteData,setIsEditing}) {
   return (
   <div>
+    <h2>Data Table</h2>
      <table>
             <thead>
                 <tr>
