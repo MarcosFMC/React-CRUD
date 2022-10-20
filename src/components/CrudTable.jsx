@@ -1,7 +1,7 @@
 import React from 'react'
 import CrudRow from './CrudRow'
 
-function CrudTable({dataBase,deleteStudent}) {
+function CrudTable({dataBase,deleteData,setIsEditing}) {
   return (
   <div>
      <table>
@@ -13,7 +13,7 @@ function CrudTable({dataBase,deleteStudent}) {
                 </tr>
             </thead>
             <tbody>
-                {dataBase.map(e=><CrudRow key={e.id} e={e} deleteStudent={deleteStudent}/>)}
+                {dataBase.map(e=><CrudRow key={e.id} e={e} deleteData={deleteData} setIsEditing={setIsEditing}/>)}
             </tbody> 
      </table>
      </div>

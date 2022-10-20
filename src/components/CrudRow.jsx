@@ -1,14 +1,13 @@
 import React from 'react'
 
-function CrudRow({e,deleteStudent}) {
+function CrudRow({e,deleteData,setIsEditing}) {
   return (
     <tr>
-
-     <td className='name'>{e.name}</td>
-     <td className='age'>{e.age}</td>
+     <td>{e.name}</td>
+     <td>{e.age}</td>
      <td>
-        <button className='edit-btn'>Edit</button>
-        <button className='delete-btn'>Delete</button>
+        <button onClick={()=>{setIsEditing(e)}}>Edit</button>
+        <button onClick={()=>{deleteData(e.id)}}>Delete</button>
      </td>
 
     </tr>

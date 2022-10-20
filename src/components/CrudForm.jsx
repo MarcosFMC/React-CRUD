@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 
-function CrudForm({createData}) {
+function CrudForm({createData,updateStudent,isEditing,setIsEditing}) {
 
 const initialForm = {
     name:'',
@@ -11,26 +11,42 @@ const initialForm = {
 
 let [form, setForm] = useState(initialForm);
 
+useEffect(() => {
+    if(isEditing !== null){
+        setForm(isEditing)
+    }
+    else{
+        HandleReset();
+    }
+}, [isEditing])
+
 const HandleSubmit = (e)=>{
-    e.preventDefault();
-    createData(form);
-    HandleReset(e);
+
+    if(isEditing === null){
+        e.preventDefault();
+        createData(form);
+         HandleReset(e);
+    }
+    else{
+        e.preventDefault();
+        updateStudent(form);
+        HandleReset(e);
+    }
 }
 
 const HandleFormChange = (e) => {
-setForm({...form,[e.target.name]: e.target.value})
+    setForm({...form,[e.target.name]: e.target.value})
 }
 
 const HandleReset= (e) =>
 {
-    setForm(initialForm);
-    e.target.name.value='';
-    e.target.age.value='';
+    setForm(initialForm); 
+    setIsEditing(null);
 }
   return (
     <form onSubmit={HandleSubmit}>
-         <input placeholder='Name' name='name' type="text" onChange={HandleFormChange} required/>
-         <input placeholder='Age' name='age' type="number" onChange={HandleFormChange} required/>
+         <input placeholder='Name' name='name' type="text" value={form.name} onChange={HandleFormChange} required/>
+         <input placeholder='Age' name='age' type="number" value={form.age} onChange={HandleFormChange} required/>
          <input type="hidden" />
          <input type="submit" value='Send'/>
     </form>      

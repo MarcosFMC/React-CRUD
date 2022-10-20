@@ -46,39 +46,36 @@ function CrudApp() {
 
   const [dataBase, setDataBase] = useState(initialDB);
 
-  const [isEditing, setIsEditing] = useState(false);
-
-  function arrayRemove(arr, value) { 
-    
-    return arr.filter(function(ele){ 
-        return ele !== value; 
-    });
-  }
+  const [isEditing, setIsEditing] = useState(null);
 
   const createData = (data)=>{
-    data.id = dataBase.length + 1
+    data.id = new Date().getMilliseconds();
     setDataBase([...dataBase,data]);
 
   } 
-  const deleteStudent = (id)=>{
-    let clone = [...dataBase];
-    arrayRemove(clone,id);
-    setDataBase(clone);
+  const deleteData = (id)=>{
+    let isDelete = window.confirm('Estas seguro de eliminarlo?')
+
+    if(isDelete){
+      let newData = dataBase.filter(e=> e.id !== id);
+      setDataBase(newData);
+    }    
   } 
   const updateStudent = (data)=>{
-
+    let newData = dataBase.map(e=>(e.id === data.id ? data : e))
+    setDataBase(newData);
   }
 
   return (
     <div>
        <article>
-        <h2>Add Student</h2>
-        <CrudForm createData={createData}></CrudForm>
+        {isEditing !== null ? <h2>Edit Student</h2> : <h2>Add Student</h2>}
+        <CrudForm createData={createData} updateStudent={updateStudent} isEditing={isEditing} setIsEditing={setIsEditing}></CrudForm>
        </article>
 
        <article>
         <h2>Students</h2>
-        <CrudTable dataBase={dataBase} deleteStudent={deleteStudent}></CrudTable>
+        <CrudTable dataBase={dataBase} deleteData={deleteData} setIsEditing={setIsEditing}></CrudTable>
        </article>
     </div>
   )
