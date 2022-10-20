@@ -4,13 +4,13 @@ import CrudRow from './CrudRow'
 function CrudTable({dataBase,deleteData,setIsEditing}) {
   return (
   <div>
-    <h2>Data Table</h2>
+    <h2 className='data-table'>Data Table</h2>
      <table>
             <thead>
                 <tr>
-                    <td>Name</td>
-                    <td>Age</td>
-                    <td>Actions</td>
+                    <td> <b>Name</b> </td>
+                    <td><b>Age</b> </td>
+                    <td><b>Actions</b> </td>
                 </tr>
             </thead>
             <tbody>
