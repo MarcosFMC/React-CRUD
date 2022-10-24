@@ -22,24 +22,24 @@ function CrudApp() {
 
   let url = 'http://localhost:3001/students';
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    setLoading(true);
+  //   setLoading(true);
 
-    api.get(url).then(res=>{
+  //   api.get(url).then(res=>{
     
 
-      if(!res.err){
-        setDataBase(res);
-        setError(null);
-      }else{
-        setError(res);
-      }
+  //     if(!res.err){
+  //       setDataBase(res);
+  //       setError(null);
+  //     }else{
+  //       setError(res);
+  //     }
 
-      setLoading(false);
+  //     setLoading(false);
 
-    });
-  }, [])
+  //   });
+  // }, [])
 
   const createData = (data)=>{
     let options = {

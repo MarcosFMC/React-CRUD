@@ -1,29 +1,19 @@
 {
   "students": [
     {
-      "id": 1,
-      "name": "Marcos",
-      "age": 21
+      "name": "Julian",
+      "age": "32",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Nico",
-      "age": 31
+      "name": "Matias",
+      "age": "22",
+      "id": 1
     },
     {
-      "id": 3,
       "name": "Martin",
-      "age": 32
-    },
-    {
-      "name": "Leon",
-      "age": "25",
-      "id": 4
-    },
-    {
-      "name": "dsafdsa",
-      "age": "25",
-      "id": 5
+      "age": "35",
+      "id": 1
     }
   ]
 }
