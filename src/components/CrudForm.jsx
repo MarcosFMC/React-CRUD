@@ -45,7 +45,7 @@ const HandleReset= (e) =>
 }
   return (
     <form onSubmit={HandleSubmit}>
-        {isEditing !== null ? <h2>Edit Student</h2> : <h2>Add Student</h2>}
+        {isEditing !== null ? <h3>Edit Student</h3> : <h3>Add Student</h3>}
          <input placeholder='Name' name='name' type="text" value={form.name} onChange={HandleFormChange} required/>
          <input placeholder='Age' name='age' type="number" value={form.age} onChange={HandleFormChange} required/>
          <input type="hidden" />

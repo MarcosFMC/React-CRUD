@@ -1,10 +1,12 @@
 import React from 'react'
 import CrudRow from './CrudRow'
+import Loader from './Loader'
+import Message from './Message'
 
-function CrudTable({dataBase,deleteData,setIsEditing}) {
+function CrudTable({dataBase,deleteData,setIsEditing,loading,error}) {
   return (
   <div>
-    <h2 className='data-table'>Data Table</h2>
+    <h3 className='data-table'>Data Table</h3>
      <table>
             <thead>
                 <tr>
@@ -17,6 +19,8 @@ function CrudTable({dataBase,deleteData,setIsEditing}) {
                 {dataBase.map(e=><CrudRow key={e.id} e={e} deleteData={deleteData} setIsEditing={setIsEditing}/>)}
             </tbody> 
      </table>
+     {loading && <Loader></Loader>}
+     {error && <Message error={error}></Message>}
      </div>
   )
 }

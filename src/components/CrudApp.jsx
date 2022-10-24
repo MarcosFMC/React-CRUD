@@ -4,22 +4,7 @@ import CrudTable from './CrudTable';
 
 
 function CrudApp() {
-    // useEffect(() => {
-    //   console.log('Fase de montaje de CRUD');
-    //   fetch('http://localhost:3000/students')
-    //   .then(res =>res.ok ? res.json() : Promise.reject(res))
-    //   .then(json =>{
-    //     json.forEach(element => {
-    //         // let $templateClone = studentTemplate.cloneNode();
-    //         // console.log($templateClone);
-    //         // $fragment.appendChild($templateClone);
-    //     });
-    //     // $table.querySelector('tbody').appendChild($fragment);
-    //   })
-    //   .catch(err =>{
-    //     console.log(err);
-    //   })
-    // }, []) 
+  
     const initialDB = 
       [
         {
